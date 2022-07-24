@@ -11,7 +11,7 @@ In the same way, I would want to know how many of the music in folders, are used
 When running scan test, all this information in printed in terminal. Also, some functions were added to main script.
 
 # Usage
-´´´
+```
 usage: main.py [-h] [-c] [-s] [--print-all] [-g GET_SONG]
 
 Software that collects information about user playlists
@@ -23,4 +23,4 @@ optional arguments:
   --print-all           Print list of songs
   -g GET_SONG, --get-song GET_SONG
                         Show information of a song by name
-´´´
+```
