@@ -16,7 +16,7 @@ Run following command to get usage help:
 `python main.py -h`
 
 ```
-usage: main.py [-h] [-c] [-s] [--print-all] [-g GET_SONG]
+usage: main.py [-h] [-c] [-s] [-g GET_SONG] [-m MIX_PLAYLIST] [--print-all]
 
 Software that collects information about user playlists
 
@@ -24,7 +24,9 @@ optional arguments:
   -h, --help            show this help message and exit
   -c, --cache           Use cached songs database
   -s, --scan            Scan all information and saves it
-  --print-all           Print list of songs
   -g GET_SONG, --get-song GET_SONG
                         Show information of a song by name
+  -m MIX_PLAYLIST, --mix-playlist MIX_PLAYLIST
+                        Mix playlist songs and saves results
+  --print-all           Print list of songs
 ```
