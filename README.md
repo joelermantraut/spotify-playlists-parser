@@ -11,6 +11,10 @@ In the same way, I would want to know how many of the music in folders, are used
 When running scan test, all this information in printed in terminal. Also, some functions were added to main script.
 
 # Usage
+Run following command to get usage help:
+
+`python main.py -h`
+
 ```
 usage: main.py [-h] [-c] [-s] [--print-all] [-g GET_SONG]
 
