@@ -336,7 +336,7 @@ class parsePlaylists:
 						playlist.pop(index)
 						break
 
-					continue
+					continue # Duplicated artists, next
 				else:
 					# If there was not "ideal" song, I add the last one
 					new_playlist.append(playlist[index])
