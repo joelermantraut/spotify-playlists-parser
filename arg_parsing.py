@@ -55,15 +55,18 @@ class ArgParsing():
 
 		songs = self.spoti_parser.walk_each_song_through_folders()
 		self.presentation("Songs not in folders: " + str(len(songs)))
-		self.save_on_file("Songs not in folders", self.spoti_parser, songs)
+		if len(songs) > 0:
+			self.save_on_file("Songs not in folders", self.spoti_parser, songs)
 
 		songs = self.spoti_parser.walk_each_song_through_main_playlists()
 		self.presentation("Songs not in main playlists: " + str(len(songs)))
-		self.save_on_file("Songs not in main playlists", self.spoti_parser, songs)
+		if len(songs) > 0:
+			self.save_on_file("Songs not in main playlists", self.spoti_parser, songs)
 
 		songs = self.spoti_parser.search_same_song()
 		self.presentation("Songs repeated: " + str(len(songs)))
-		self.save_on_file("Songs Repeated", self.spoti_parser, songs)
+		if len(songs) > 0:
+			self.save_on_file("Songs Repeated", self.spoti_parser, songs)
 
 	def get_song(self, song):
 		ID = self.spoti_parser.get_song_id(song)
