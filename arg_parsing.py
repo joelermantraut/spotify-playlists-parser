@@ -22,8 +22,9 @@ class ArgParsing():
 	def add_args(self):
 		self.parser.add_argument("-c", "--cache", action="store_true", help="Use cached songs database")
 		self.parser.add_argument("-s", "--scan", action="store_true", help="Scan all information and saves it")
-		self.parser.add_argument("--print-all", action="store_true", help="Print list of songs")
 		self.parser.add_argument("-g", "--get-song", help="Show information of a song by name")
+		self.parser.add_argument("-m", "--mix-playlist", help="Mix playlist songs and saves results")
+		self.parser.add_argument("--print-all", action="store_true", help="Print list of songs")
 
 	def parse_args(self):
 		args = self.parser.parse_args()
@@ -45,6 +46,9 @@ class ArgParsing():
 		if args.get_song:
 			self.get_song(args.get_song)
 
+		if args.mix_playlist:
+			self.mix_playlist(args.mix_playlist)
+
 	def run_scan(self):
 		self.presentation("Total songs: " + str(len(self.spoti_parser.songs)))
 		self.save_on_file("Songs Lists", self.spoti_parser, self.spoti_parser.songs)
@@ -61,10 +65,6 @@ class ArgParsing():
 		self.presentation("Songs repeated: " + str(len(songs)))
 		self.save_on_file("Songs Repeated", self.spoti_parser, songs)
 
-	def print_all(self):
-		if len(self.spoti_parser.songs):
-			print(spoti_parser.songs)
-
 	def get_song(self, song):
 		ID = self.spoti_parser.get_song_id(song)
 		if ID:
@@ -74,6 +74,15 @@ class ArgParsing():
 
 		for song in song_appearances:
 			print(self.spoti_parser.format_song(song))
+
+	def mix_playlist(self, playlist_name):
+		new_playlist = self.spoti_parser.mix_playlist(playlist_name)
+
+		self.save_on_file("New order - " + playlist_name, self.spoti_parser, new_playlist)
+
+	def print_all(self):
+		if len(self.spoti_parser.songs):
+			print(spoti_parser.songs)
 
 	def presentation(self, string):
 		"""

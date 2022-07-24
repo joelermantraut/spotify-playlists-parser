@@ -60,6 +60,7 @@ song_properties = first_song["track"]:
 
 import spotipy
 import pickle
+import random
 
 class parsePlaylists:
 	"""
@@ -305,6 +306,43 @@ class parsePlaylists:
 						song_appearances.append(this_song)
 
 		return song_appearances
+
+	def mix_playlist(self, playlist_name):
+		"""
+		Spotify random player sometimes is not effective. This method mix songs, in
+		a better random critheria, and saves new playlist order.
+		"""
+		playlist = self.sorted_songs[playlist_name]
+		new_playlist = list()
+
+		for item in range(len(playlist)):
+			if len(new_playlist) == 0:
+				index = random.randint(0, len(playlist) - 1)
+				new_playlist.append(playlist[index])
+				playlist.pop(index)
+				# Add first song because have nothing to compare
+			else:
+				for i in range(5):
+					# Five attempts to get the best song for this place
+					index = random.randint(0, len(playlist) - 1)
+
+					for artist in playlist[index]["artists"]:
+						if artist in new_playlist[-1]["artists"]:
+							# Duplicated artists, skip
+							break
+					else:
+						# Not duplicated artists
+						new_playlist.append(playlist[index])
+						playlist.pop(index)
+						break
+
+					continue
+				else:
+					# If there was not "ideal" song, I add the last one
+					new_playlist.append(playlist[index])
+					playlist.pop(index)
+
+		return new_playlist
 
 	def cache_songs(self):
 		"""
