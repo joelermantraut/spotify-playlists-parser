@@ -1,6 +1,4 @@
 """
-Software that collects information about user playlists.
-
 Structure:
 
 playlists = sp.playlist(playlist_id):

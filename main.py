@@ -1,3 +1,7 @@
+"""
+Software that collects information about user playlists.
+"""
+
 from credentials import Credentials
 from arg_parsing import ArgParsing
 
