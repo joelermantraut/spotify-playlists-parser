@@ -8,7 +8,7 @@ I like or liked. Then, there are any numbers of playlists (main playlists), wher
 So, its interesting for me to be sure that all songs in main playlists are in their respective folder. Otherwise, if I decide to delete a playlists, I would
 lose some of the not saved songs.
 In the same way, I would want to know how many of the music in folders, are used in main playlists.
-When running scan test, all this information in printed in terminal. Also, some functions were added to main script.
+When running scan test, all this information is printed in terminal. Also, some functions were added to main script, for example to search a song appearances.
 
 # Usage
 Run following command to get usage help:
