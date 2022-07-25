@@ -20,6 +20,7 @@ Also, some functions were added to main script, for example to search a song app
 `python -m generation_scripts/credentials_file.py`
 
 `NOTE:`Run it from root folder, otherwise it will not work.
+
 4. Then, edit "playlists_dict_generator.py", adding your playlists. Run it from root folder, and a playlists.pkl file will be generated in data folder.
 
 # Usage
