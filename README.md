@@ -16,8 +16,9 @@ Also, some functions were added to main script, for example to search a song app
 1. First, install dependencies with requeriments.txt file:
 `pip install -r requirements.txt`
 2. After it, create a data folder, inside root folder.
-3. In "generation_scripts" folder, there are two script. Edit "credentials_file.py" to generate .credentials file.
+3. In "generation_scripts" folder, there are two script. Edit "credentials_file.py" to generate .credentials file:
 `python -m generation_scripts/credentials_file.py`
+
 `NOTE:`Run it from root folder, otherwise it will not work.
 4. Then, edit "playlists_dict_generator.py", adding your playlists. Run it from root folder, and a playlists.pkl file will be generated in data folder.
 
