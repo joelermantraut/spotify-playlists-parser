@@ -2,13 +2,24 @@
 
 # Introduction
 This is an app that connects to a user Spotify library, and reads it to bring information and conclusions about it.
+
 Specifically, it responds to my way of music organization, where I have two folders called "Artists" and "Genres". In them I save, sorted, all the music
 I like or liked. Then, there are any numbers of playlists (main playlists), where I mix all my music, in the way I prefer it.
 
 So, its interesting for me to be sure that all songs in main playlists are in their respective folder. Otherwise, if I decide to delete a playlists, I would
-lose some of the not saved songs.
-In the same way, I would want to know how many of the music in folders, are used in main playlists.
-When running scan test, all this information is printed in terminal. Also, some functions were added to main script, for example to search a song appearances.
+lose some of the not saved songs. In the same way, I would want to know how many of the music in folders, are used in main playlists.
+When running scan test, all this information is printed in terminal.
+
+Also, some functions were added to main script, for example to search a song appearances.
+
+# Setting Up
+1. First, install dependencies with requeriments.txt file:
+`pip install -r requirements.txt`
+2. After it, create a data folder, inside root folder.
+3. In "generation_scripts" folder, there are two script. Edit "credentials_file.py" to generate .credentials file.
+`python -m generation_scripts/credentials_file.py`
+`NOTE:`Run it from root folder, otherwise it will not work.
+4. Then, edit "playlists_dict_generator.py", adding your playlists. Run it from root folder, and a playlists.pkl file will be generated in data folder.
 
 # Usage
 Run following command to get usage help:
