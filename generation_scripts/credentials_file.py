@@ -3,7 +3,7 @@ Script to generate credentials file.
 """
 
 def main():
-	CREDENTIALS_FILEPATH = "../.credentials"
+	CREDENTIALS_FILEPATH = "data/.credentials"
 
 	USERNAME = ""
 	CLIENT_ID = ""
