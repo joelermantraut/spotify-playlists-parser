@@ -236,6 +236,5 @@ pip-selfcheck.json
 # End of https://www.toptal.com/developers/gitignore/api/python,virtualenv,visualstudiocode,sublimetext
 
 .credentials
-generation_scripts
 data
 share
