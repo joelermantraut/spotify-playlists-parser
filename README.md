@@ -44,3 +44,6 @@ optional arguments:
                         Show song info
   --print-all           Print list of songs
 ```
+
+# Disclaimer
+Don't forget that this was done thinking in my organization method, explained before. If it you don't use it, it would work, as it would not.
