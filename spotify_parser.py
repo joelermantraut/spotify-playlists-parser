@@ -195,6 +195,28 @@ class parsePlaylists:
 		# If song was not in any of the folders
 		return song
 
+	def search_artists_in_folders(self):
+		"""
+		Method that searches an artists in folders playlists that
+		has its own artists folder.
+		"""
+		own_artists_list = [genre.lower() for genre in self.playlists["Artists"].keys()]
+
+		folder = self.sorted_songs["Genres"]
+
+		songs = list()
+
+		for playlist in folder.keys():
+			tracks = folder[playlist]
+			for this_song in tracks:
+				artists = this_song['artists']
+				for artist in artists:
+					if artist.lower() in own_artists_list:
+						songs.append(this_song)
+
+		return songs
+						
+
 	def walk_each_song_through_main_playlists(self):
 		"""
 		Takes songs from main folders, and passes them.
