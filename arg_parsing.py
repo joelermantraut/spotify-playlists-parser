@@ -118,7 +118,8 @@ class ArgParsing():
 
 	def print_all(self):
 		if len(self.spoti_parser.songs):
-			print(spoti_parser.songs)
+			Printer().special_print(self.spoti_parser.songs)
+			# print(self.spoti_parser.songs)
 
 	def presentation(self, string):
 		"""
